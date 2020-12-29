@@ -1,4 +1,4 @@
-import { Article } from "../../model/Article";
+import { Article } from "../../types";
 import { getArticle, getBlog } from "../../lib/api";
 import { format } from "date-fns";
 

@@ -1,30 +1,19 @@
 import Head from "next/head";
-import styles from "../styles/Home.module.css";
-import Link from "next/link";
-import { Article } from "../model/Article";
-import { getBlog } from "../lib/api/index";
-import { ArticleIndexCard } from "../components/cards";
+import { PostItem } from "../types";
+import { PostList } from "../components";
+import posts from "../../.contents/posts.json";
 
-export default function Home({ contents }: { contents: Article[] }) {
+export default function Home({}) {
   return (
     <div>
-      <ul>
-        {contents.map((article) => (
-          <li key={article.id}>
-            <ArticleIndexCard article={article} />
-          </li>
-        ))}
-      </ul>
+      <div className="border-t border-gray-200 pt-8 grid grid-cols-1 gap-y-6 lg:grid-cols-4 lg:gap-5">
+        <div>
+          <h2 className="text-2xl tracking-tight font-extrabold text-gray-900 mt-10 mb-8">
+            Articles
+          </h2>
+        </div>
+        <PostList items={posts as PostItem[]} />
+      </div>
     </div>
   );
 }
-
-// データをテンプレートに受け渡す部分の処理を記述します
-export const getStaticProps = async () => {
-  const data = await getBlog();
-  return {
-    props: {
-      contents: data.contents,
-    },
-  };
-};

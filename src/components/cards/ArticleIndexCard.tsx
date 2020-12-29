@@ -1,5 +1,5 @@
 import React, { FC, useState, useEffect } from "react";
-import { Article } from "../../model/Article";
+import { Article } from "../../types";
 import Link from "next/link";
 import { format } from "date-fns";
 

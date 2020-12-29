@@ -4,7 +4,6 @@ export type Member = {
   sources: string[];
   githubUsername: string;
   twitterUsername: string;
-
 };
 
 export type PostItem = {
@@ -24,15 +23,14 @@ export type FeedItem = {
   dateMiliSeconds: number;
 };
 
-export type Category {
+export type Category = {
   name: string;
-}
+};
 
-
-export type Article {
+export type Article = {
   id: string;
   title: string;
   body: string;
   publishedAt: string;
   category: Category | null;
-}
+};
