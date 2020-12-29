@@ -5,13 +5,14 @@ import { getArticle, getBlog } from "../api";
 export default function BlogId({ blog }: { blog: Article }) {
   console.warn("blog", blog);
   return (
-    <main>
-      <h1>{blog.title}</h1>
-      <p>{blog.publishedAt}</p>
-      <div
+    <main className="w-3/4 my-0 mx-auto">
+      <h1 className="mb-10">{blog.title}</h1>
+      <p className="mb-20">{blog.publishedAt}</p>
+      <article
         dangerouslySetInnerHTML={{
           __html: `${blog.body}`,
         }}
+        className="prose lg:prose-xl"
       />
     </main>
   );
