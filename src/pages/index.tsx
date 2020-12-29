@@ -2,17 +2,16 @@ import Head from "next/head";
 import styles from "../styles/Home.module.css";
 import Link from "next/link";
 import { Article } from "../model/Article";
-import { getBlog } from "./api/index";
+import { getBlog } from "../lib/api/index";
+import { ArticleIndexCard } from "../components/cards";
 
-export default function Home({ blog }: { blog: Article[] }) {
+export default function Home({ contents }: { contents: Article[] }) {
   return (
     <div>
       <ul>
-        {blog.map((blog) => (
-          <li key={blog.id}>
-            <Link href={`blog/${blog.id}`}>
-              <a>{blog.title}</a>
-            </Link>
+        {contents.map((article) => (
+          <li key={article.id}>
+            <ArticleIndexCard article={article} />
           </li>
         ))}
       </ul>
@@ -25,7 +24,7 @@ export const getStaticProps = async () => {
   const data = await getBlog();
   return {
     props: {
-      blog: data.contents,
+      contents: data.contents,
     },
   };
 };
