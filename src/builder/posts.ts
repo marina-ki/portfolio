@@ -1,37 +1,9 @@
 import fs from "fs-extra";
 import Parser from "rss-parser";
+import { member } from "../../member";
+import { FeedItem, Member, PostItem } from "../types";
 
 export default {};
-
-const member = {
-  name: "marina",
-  sources: [
-    "https://zenn.dev/marin_a___/feed",
-    "https://qiita.com/marin_a__/feed.atom",
-  ],
-};
-
-type Member = {
-  name: string;
-  sources: string[];
-};
-
-type PostItem = {
-  authorName: string;
-  title: string;
-  link: string;
-  contentSnippet?: string;
-  isoDate?: string;
-  dateMiliSeconds: number;
-};
-
-type FeedItem = {
-  title: string;
-  link: string;
-  contentSnippet?: string;
-  isoDate?: string;
-  dateMiliSeconds: number;
-};
 
 const parser = new Parser();
 
