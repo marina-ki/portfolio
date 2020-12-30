@@ -5,7 +5,6 @@ export type Member = {
   githubUsername: string;
   twitterUsername: string;
 };
-
 export type PostItem = {
   authorName: string;
   title: string;
@@ -13,6 +12,7 @@ export type PostItem = {
   contentSnippet?: string;
   isoDate?: string;
   dateMiliSeconds: number;
+  sourceType?: "qiita" | "zenn";
 };
 
 export type FeedItem = {

@@ -2,18 +2,19 @@ import { useState } from "react";
 import Link from "next/link";
 import { format } from "date-fns";
 import { member } from "../../member";
-import { PostItem } from "../types";
+import { PostItem } from "@src/types";
+import { PostIcon } from "./PostIcon";
 
 const PostLink: React.FC<{ item: PostItem }> = (props) => {
-  const { title, isoDate, link } = props.item;
-
+  const { title, isoDate, link, sourceType } = props.item;
+  console.log(props.item);
   return (
     <li>
       <Link href={link}>
         <a className="flex items-start space-x-4">
+          <PostIcon sourceType={sourceType} />
           <div className="flex-auto">
             <h3 className="font-bold text-gray-900">{title}</h3>
-
             <time dateTime={isoDate} className="text-sm text-gray-500">
               {isoDate && format(new Date(isoDate), "yyyy/MM/dd")}
             </time>

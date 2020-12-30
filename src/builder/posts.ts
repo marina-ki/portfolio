@@ -9,6 +9,12 @@ const parser = new Parser();
 
 async function fetchFeedItems(url: string) {
   const feed = await parser.parseURL(url);
+  let sourceType: PostItem["sourceType"];
+  if (url.indexOf("zenn") !== -1) {
+    sourceType = "zenn";
+  } else if (url.indexOf("qiita") !== -1) {
+    sourceType = "qiita";
+  }
 
   if (!feed?.items?.length) return [];
 
@@ -21,6 +27,7 @@ async function fetchFeedItems(url: string) {
         link,
         isoDate,
         dateMiliSeconds: isoDate ? new Date(isoDate).getTime() : 0,
+        sourceType,
       };
     })
     .filter(({ title, link }) => title && link) as FeedItem[];
@@ -38,23 +45,8 @@ async function getFeedItemsFromSources(sources: undefined | string[]) {
   } catch (error) {}
 }
 
-async function getMemberFeedItems(member: Member): Promise<PostItem[]> {
-  const { name, sources } = member;
-  const feedItems = await getFeedItemsFromSources(sources);
-  if (!feedItems) return [];
-
-  let postItems = feedItems.map((item) => {
-    return {
-      ...item,
-      authorName: name,
-    };
-  });
-
-  return postItems;
-}
-
 (async function () {
-  const items = await getMemberFeedItems(member);
+  const items = (await getFeedItemsFromSources(member.sources)) ?? [];
   items.sort((a, b) => b.dateMiliSeconds - a.dateMiliSeconds);
   fs.ensureDirSync(".contents");
   fs.writeJsonSync(".contents/posts.json", items);

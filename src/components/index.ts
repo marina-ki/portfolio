@@ -1,2 +1,3 @@
+export * from "./PostIcon";
 export * from "./PostList";
-export * from "./ZennIcon";
+export * from "./icons";
