@@ -1,6 +1,6 @@
 import fs from "fs-extra";
 import Parser from "rss-parser";
-import { member } from "../../member";
+import { member } from "../utils/member";
 import { FeedItem, Member, PostItem } from "../types";
 
 export default {};

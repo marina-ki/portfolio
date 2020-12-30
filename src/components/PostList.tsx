@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { format } from "date-fns";
-import { member } from "../../member";
+import { member } from "../utils/member";
 import { PostItem } from "@src/types";
 import { PostIcon } from "./PostIcon";
 

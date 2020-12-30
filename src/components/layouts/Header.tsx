@@ -19,11 +19,11 @@ export const Header: FC<Props> = (props) => {
         </div>
 
         <div className="flex text-sm">
-          <Link href="/blog">
+          {/* <Link href="/blog">
             <a className="font-medium text-gray-500 hover:text-gray-900">
               Blog
             </a>
-          </Link>
+          </Link> */}
           <Link href="/about">
             <a className="ml-4 font-medium text-gray-500 hover:text-gray-900 sm:ml-12">
               About

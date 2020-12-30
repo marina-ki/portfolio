@@ -34,3 +34,7 @@ export type Article = {
   publishedAt: string;
   category: Category | null;
 };
+
+export type Skill = {
+  name: string;
+};

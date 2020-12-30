@@ -1,18 +1,22 @@
 import { PostItem } from "../types";
-import { PostList, Logo } from "../components";
+import { PostList, Logo, Title } from "../components";
 import posts from "../../.contents/posts.json";
-import { Header } from "../components";
+import { Header, SkillList } from "../components";
 
 export default function Home({}) {
   return (
     <>
       <Header />
-      <section>
-        <h2 className="text-2xl tracking-tight font-extrabold text-gray-900 mt-10 mb-8">
-          Articles
-        </h2>
-        <PostList items={posts as PostItem[]} />
-      </section>
+      <main className="max-w-3xl mx-auto px-4 sm:px-6 xl:max-w-5xl xl:px-0">
+        <section className="border-b-2 border-gray-200">
+          <Title>Skills</Title>
+          <SkillList />
+        </section>
+        <section>
+          <Title>Articles</Title>
+          <PostList items={posts as PostItem[]} />
+        </section>
+      </main>
     </>
   );
 }
