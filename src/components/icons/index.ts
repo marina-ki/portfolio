@@ -1,7 +1,9 @@
 export * from "./ApolloIcon";
 export * from "./BlitzIcon";
 export * from "./CssIcon";
+export * from "./EmailIcon";
 export * from "./GraphqlIcon";
+export * from "./GithubIcon";
 export * from "./HasuraIcon";
 export * from "./HtmlIcon";
 export * from "./JavaScriptIcon";
@@ -9,5 +11,6 @@ export * from "./RailsIcon";
 export * from "./ReactIcon";
 export * from "./RubyIcon";
 export * from "./TypeScriptIcon";
+export * from "./TwitterIcon";
 export * from "./ZennIcon";
 export * from "./Logo";

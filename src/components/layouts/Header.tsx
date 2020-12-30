@@ -27,11 +27,11 @@ export const Header: FC<Props> = (props) => {
               About
             </a>
           </Link>
-          <Link href="/contact">
+          {/* <Link href="/contact">
             <a className="ml-4 font-medium text-gray-500 hover:text-gray-900 sm:ml-12">
               Contact
             </a>
-          </Link>
+          </Link> */}
         </div>
       </div>
     </header>

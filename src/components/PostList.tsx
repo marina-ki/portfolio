@@ -9,7 +9,7 @@ const PostLink: React.FC<{ item: PostItem }> = (props) => {
   const { title, isoDate, link, sourceType } = props.item;
   console.log(props.item);
   return (
-    <li>
+    <li className="rounded hover:bg-gray-100 -m-3 p-3">
       <Link href={link}>
         <a className="flex items-start space-x-4">
           <PostIcon sourceType={sourceType} />

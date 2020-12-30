@@ -2,6 +2,7 @@ import { Article } from "../../types";
 import { getBlog } from "../../lib/api";
 import { Header, Title } from "../../components";
 import { AboutItem } from "../../components/AboutItem";
+import { SkillList } from "../../components/SkillList";
 
 const contents = [
   { title: "桜蔭高等学校 卒業", date: "2017.03" },
@@ -32,8 +33,12 @@ export default function About() {
   return (
     <>
       <Header />
-      <div className="h-screen max-w-3xl mx-auto px-4 sm:px-6 xl:max-w-5xl xl:px-0">
-        <Title>About</Title>
+      <main className="h-screen max-w-3xl mx-auto px-4 sm:px-6 xl:max-w-5xl xl:px-0">
+        <section className="border-b-2 border-gray-200">
+          <Title>Skills</Title>
+          <SkillList />
+        </section>
+        <Title>Education ＆ Career</Title>
         <ul className="bg-gray-50 rounded-3xl p-2 sm:p-5 xl:p-6">
           {contents.map((content, i) => (
             <AboutItem
@@ -46,7 +51,7 @@ export default function About() {
             />
           ))}
         </ul>
-      </div>
+      </main>
     </>
   );
 }
