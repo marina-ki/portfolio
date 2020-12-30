@@ -3,6 +3,7 @@ import { getBlog } from "../../lib/api";
 import { Header, Title } from "../../components";
 import { AboutItem } from "../../components/AboutItem";
 import { SkillList } from "../../components/SkillList";
+import { Meta } from "../../components/common/Meta";
 
 const contents = [
   { title: "桜蔭高等学校 卒業", date: "2017.03" },
@@ -29,9 +30,15 @@ const contents = [
   },
   { title: "復学", date: "2020.10" },
 ];
+
 export default function About() {
   return (
     <>
+      <Meta
+        title="Portfolio"
+        description="Marina | Mobile Engineer."
+        image="https://images.microcms-assets.io/protected/ap-northeast-1:7b46820b-9e1b-4aab-ba38-e994b4176f3c/service/marina/media/marinya.png"
+      />
       <Header />
       <main className="max-w-3xl mx-auto px-4 sm:px-6 xl:max-w-5xl xl:px-0 mb-10">
         <section className="border-b-2 border-gray-200">
