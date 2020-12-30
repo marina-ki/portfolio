@@ -8,7 +8,7 @@ export const ProfileCard: FC<Props> = (props) => {
   const {} = props;
 
   return (
-    <div className="flex flex-col items-center justify-center bg-white p-4 shadow-lg rounded-lg">
+    <div className="flex flex-col items-center justify-center bg-white p-4 shadow-lg rounded-lg border border-gray-200">
       <div className="shadow-xl border border-gray-200 rounded-full overflow-hidden h-40 w-40">
         <img
           src="/neko.jpg"
