@@ -19,7 +19,7 @@ export const ProfileCard: FC<Props> = (props) => {
 
       <h2 className="mt-4 font-bold text-xl">Marina</h2>
       <h6 className="mt-2 text-sm font-medium">
-        Mobile Engineer | Backend Engeneer
+        Mobile Engineer | Backend Engineer
       </h6>
 
       <p className="text-xs text-gray-500 text-center mt-3">
