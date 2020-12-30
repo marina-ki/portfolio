@@ -1,18 +1,21 @@
 import { Article } from "../../types";
 import { getBlog } from "../../lib/api";
-import { ArticleIndexCard } from "../../components/cards";
+import { ArticleIndexCard, Header } from "../../components";
 
 export default function Blog({ contents }: { contents: Article[] }) {
   return (
-    <div>
-      <ul>
-        {contents.map((article) => (
-          <li key={article.id}>
-            <ArticleIndexCard article={article} />
-          </li>
-        ))}
-      </ul>
-    </div>
+    <>
+      <Header />
+      <div className="h-screen">
+        <ul>
+          {contents.map((article) => (
+            <li key={article.id}>
+              <ArticleIndexCard article={article} />
+            </li>
+          ))}
+        </ul>
+      </div>
+    </>
   );
 }
 
