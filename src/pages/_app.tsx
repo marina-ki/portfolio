@@ -8,7 +8,6 @@ function MyApp({ Component, pageProps }: AppProps) {
       <Head>
         <link rel="shurtcut icon" href="/m.ico" />
       </Head>
-
       <Component {...pageProps} />
     </>
   );
