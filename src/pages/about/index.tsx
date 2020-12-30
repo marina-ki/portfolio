@@ -33,7 +33,7 @@ export default function About() {
   return (
     <>
       <Header />
-      <main className="h-screen max-w-3xl mx-auto px-4 sm:px-6 xl:max-w-5xl xl:px-0">
+      <main className="max-w-3xl mx-auto px-4 sm:px-6 xl:max-w-5xl xl:px-0 mb-10">
         <section className="border-b-2 border-gray-200">
           <Title>Skills</Title>
           <SkillList />

@@ -6,7 +6,7 @@ export default function Blog({ contents }: { contents: Article[] }) {
   return (
     <>
       <Header />
-      <main className="h-screen max-w-3xl mx-auto px-4 sm:px-6 xl:max-w-5xl xl:px-0 mt-10">
+      <main className="max-w-3xl mx-auto px-4 sm:px-6 xl:max-w-5xl xl:px-0 mt-10">
         <ul>
           {contents.map((article) => (
             <li key={article.id}>
