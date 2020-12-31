@@ -35,6 +35,10 @@ export type Article = {
   category: Category | null;
 };
 
+export type Draft = Article & {
+  publishedAt?: string;
+};
+
 export type Skill = {
   name: string;
 };

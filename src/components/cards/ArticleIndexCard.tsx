@@ -13,7 +13,7 @@ export const ArticleIndexCard: FC<Props> = (props): JSX.Element => {
   } = props;
 
   return (
-    <Link href={`blog/${id}`}>
+    <Link href={`/blog/${id}`}>
       <a className="flex flex-col bg-white px-8 py-6 max-w-sm rounded-lg shadow-lg border border-gray-100 hover:bg-gray-50">
         <div className="mt-4 text-lg text-gray-700 font-medium">{title}</div>
         <div className="flex justify-between items-center mt-4">

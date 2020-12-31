@@ -1,11 +1,18 @@
-import { Article } from "../../types";
+import { Article, Draft } from "../../types";
 import { getArticle, getBlog } from "../../lib/api";
 import { format } from "date-fns";
 import { Header } from "../../components/layouts/Header";
 import { Meta } from "../../components/common/Meta";
+import type { GetStaticProps } from "next";
 
 // pages/blog/[id].js
-export default function BlogId({ blog }: { blog: Article }) {
+export default function BlogId({
+  blog,
+  preview,
+}: {
+  blog: Article | Draft;
+  preview: boolean;
+}) {
   return (
     <>
       <Meta
@@ -14,10 +21,13 @@ export default function BlogId({ blog }: { blog: Article }) {
         image="https://images.microcms-assets.io/protected/ap-northeast-1:7b46820b-9e1b-4aab-ba38-e994b4176f3c/service/marina/media/marinya.png"
       />
       <Header />
+      {preview && <a href="/api/clear-preview">プレビューモードを解除</a>}
       <main className="max-w-3xl mx-auto px-4 sm:px-6 xl:max-w-5xl xl:px-0">
         <div className="space-y-1 text-center py-10 border-b border-gray-200">
           <p className="text-base leading-6 font-medium text-gray-500 my-3">
-            {format(new Date(blog.publishedAt), "yyyy/MM/dd")}
+            {preview
+              ? "※下書き"
+              : format(new Date(blog.publishedAt), "yyyy/MM/dd")}
           </p>
           <h1 className="text-3xl leading-9 font-extrabold text-gray-900 tracking-tight sm:text-4xl sm:leading-10 md:text-5xl md:leading-14">
             {blog.title}
@@ -49,12 +59,14 @@ export const getStaticPaths = async () => {
 };
 
 // データをテンプレートに受け渡す部分の処理を記述します
-export const getStaticProps = async (context: { params: { id: string } }) => {
-  const id = context.params.id;
-  const data = await getArticle(id);
+export const getStaticProps: GetStaticProps = async (context) => {
+  const draftKey = context.previewData?.draftKey;
+  const id = context.params?.id;
+  const data = typeof id === "string" ? await getArticle(id, draftKey) : null;
   return {
     props: {
       blog: data,
+      preview: context.params?.preview || false,
     },
   };
 };

@@ -12,9 +12,10 @@ export const getBlog = async () => {
   } catch (error) {}
 };
 
-export const getArticle = async (id: string) => {
+export const getArticle = async (id: string, draftKey?: string) => {
+  const params = draftKey ? `?draftKey=${draftKey}` : "";
   try {
-    return await fetch(`${BLOG_API}/${id}`, key)
+    return await fetch(`${BLOG_API}/${id}${params}`, key)
       .then((res) => res.json())
       .catch(() => null);
   } catch (error) {}
