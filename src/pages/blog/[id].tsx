@@ -32,7 +32,7 @@ export default function BlogId({ blog }: { blog: Article }) {
           dangerouslySetInnerHTML={{
             __html: `${blog.body}`,
           }}
-          className="prose max-w-none pt-10 pb-8"
+          className="prose max-w-none pt-10 pb-8 prose-blue"
         />
       </main>
     </>
