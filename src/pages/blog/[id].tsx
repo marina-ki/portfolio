@@ -6,12 +6,11 @@ import { Meta } from "../../components/common/Meta";
 
 // pages/blog/[id].js
 export default function BlogId({ blog }: { blog: Article }) {
-  console.warn("blog", blog);
   return (
     <>
       <Meta
         title="Portfolio"
-        description="Marina | Mobile Engineer."
+        description={blog.title}
         image="https://images.microcms-assets.io/protected/ap-northeast-1:7b46820b-9e1b-4aab-ba38-e994b4176f3c/service/marina/media/marinya.png"
       />
       <Header />
@@ -25,7 +24,7 @@ export default function BlogId({ blog }: { blog: Article }) {
           </h1>
           {blog.category && (
             <div className="pt-2">
-              <a className=" text-indigo-500">#{blog.category.name}</a>
+              <a className=" text-blue-400">#{blog.category.name}</a>
             </div>
           )}
         </div>

@@ -13,7 +13,7 @@ export default function Blog({ contents }: { contents: Article[] }) {
       />
       <Header />
       <main className="max-w-3xl mx-auto px-4 sm:px-6 xl:max-w-5xl xl:px-0 mt-10">
-        <ul>
+        <ul className="grid sm:grid-cols-2 xl:grid-cols-3 gap-6">
           {contents.map((article) => (
             <li key={article.id}>
               <ArticleIndexCard article={article} />
