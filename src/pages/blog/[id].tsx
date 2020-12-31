@@ -9,8 +9,8 @@ export default function BlogId({ blog }: { blog: Article }) {
   return (
     <>
       <Meta
-        title="Portfolio"
-        description={blog.title}
+        title={blog.title}
+        description=""
         image="https://images.microcms-assets.io/protected/ap-northeast-1:7b46820b-9e1b-4aab-ba38-e994b4176f3c/service/marina/media/marinya.png"
       />
       <Header />

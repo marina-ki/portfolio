@@ -7,7 +7,7 @@ export default function Blog({ contents }: { contents: Article[] }) {
   return (
     <>
       <Meta
-        title="Portfolio"
+        title="Blog"
         description="Marina | Mobile Engineer."
         image="https://images.microcms-assets.io/protected/ap-northeast-1:7b46820b-9e1b-4aab-ba38-e994b4176f3c/service/marina/media/marinya.png"
       />
