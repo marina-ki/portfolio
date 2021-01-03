@@ -7,7 +7,6 @@ import { PostIcon } from "./PostIcon";
 
 const PostLink: React.FC<{ item: PostItem }> = (props) => {
   const { title, isoDate, link, sourceType } = props.item;
-  console.log(props.item);
   return (
     <li className="rounded hover:bg-gray-100 -m-3 p-3">
       <Link href={link}>

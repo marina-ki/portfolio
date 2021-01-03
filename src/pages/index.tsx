@@ -3,8 +3,22 @@ import { PostList, Logo, Title } from "../components";
 import posts from "../../.contents/posts.json";
 import { Header, SkillList, ProfileCard } from "../components";
 import { Meta } from "../components/common/Meta";
+import { useEffect } from "react";
 
 export default function Home({}) {
+  console.log("please Enter s on window");
+
+  const escFunction = (e: KeyboardEvent) => {
+    if (e.keyCode == 83) {
+      const log = "🍺".repeat(10000);
+      console.log(log);
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener("keydown", escFunction, false);
+  }, []);
+
   return (
     <>
       <Meta
