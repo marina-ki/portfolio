@@ -3,6 +3,7 @@ export * from "./PostList";
 export * from "./ProfileIcon";
 export * from "./SkillList";
 export * from "./Title";
+export * from "./QualificationList";
 export * from "./cards";
 export * from "./icons";
 export * from "./layouts";

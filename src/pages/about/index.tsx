@@ -1,6 +1,6 @@
 import { Article } from "../../types";
 import { getBlog } from "../../lib/api";
-import { Header, Title } from "../../components";
+import { Header, QualificationList, Title } from "../../components";
 import { AboutItem } from "../../components/AboutItem";
 import { SkillList } from "../../components/SkillList";
 import { Meta } from "../../components/common/Meta";
@@ -44,6 +44,10 @@ export default function About() {
         <section className="border-b-2 border-gray-200">
           <Title>Skills</Title>
           <SkillList />
+        </section>
+        <section className="border-b-2 border-gray-200">
+          <Title>Qualifications</Title>
+          <QualificationList />
         </section>
         <Title>Education ＆ Career</Title>
         <ul className="bg-gray-50 rounded-3xl p-2 sm:p-5 xl:p-6">
