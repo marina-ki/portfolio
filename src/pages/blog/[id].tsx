@@ -13,15 +13,11 @@ export default function BlogId({
   blog: Article | Draft;
   preview: boolean;
 }) {
-  const utf8title = unescape(encodeURIComponent(blog.title));
+  const url = `https://og-image-1.vercel.app/${blog.title}.png`;
 
   return (
     <>
-      <Meta
-        title={blog.title}
-        description=""
-        image={`https://og-image-1.vercel.app/${utf8title}.png`}
-      />
+      <Meta title={blog.title} description="" image={encodeURI(url)} />
       <Header />
       {preview && <a href="/api/clear-preview">プレビューモードを解除</a>}
       <main className="max-w-3xl mx-auto px-4 sm:px-6 xl:max-w-5xl xl:px-0">
