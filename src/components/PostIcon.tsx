@@ -13,7 +13,7 @@ export const PostIcon: FC<Props> = (props) => {
   if (sourceType === "zenn") {
     return <ZennIcon />;
   } else if (sourceType === "qiita") {
-    return <Image src="/icon/qiita.png" width="30" height="30" />;
+    return <Image src="/icon/qiita.png" width="30" height="30" alt="qiita" />;
   } else {
     return null;
   }

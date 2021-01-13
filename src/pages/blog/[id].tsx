@@ -19,7 +19,11 @@ export default function BlogId({
     <>
       <Meta title={blog.title} description="" image={encodeURI(url)} />
       <Header />
-      {preview && <a href="/api/clear-preview">プレビューモードを解除</a>}
+      {preview && (
+        <a href="/api/clear-preview" aria-label="プレビュー解除">
+          プレビューモードを解除
+        </a>
+      )}
       <main className="max-w-3xl mx-auto px-4 sm:px-6 xl:max-w-5xl xl:px-0">
         <div className="space-y-1 text-center py-10 border-b border-gray-200">
           <p className="text-base leading-6 font-medium text-gray-500 my-3">
@@ -31,9 +35,7 @@ export default function BlogId({
             {blog.title}
           </h1>
           {blog.category && (
-            <div className="pt-2">
-              <a className=" text-blue-400">#{blog.category.name}</a>
-            </div>
+            <div className="pt-2 text-blue-400">#{blog.category.name}</div>
           )}
         </div>
         <article
