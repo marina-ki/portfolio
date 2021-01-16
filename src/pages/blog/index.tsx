@@ -1,7 +1,6 @@
 import { Article } from "../../types";
 import { getBlog } from "../../lib/api";
-import { ArticleIndexCard, Header } from "../../components";
-import { Meta } from "../../components/common/Meta";
+import { ArticleIndexCard, Header, Meta } from "../../components";
 
 export default function Blog({ contents }: { contents: Article[] }) {
   return (

@@ -14,7 +14,11 @@
     "isolatedModules": true,
     "jsx": "preserve",
     "paths": {
-      "@*": ["./*"]
+      "@*": ["./*"],
+      "components": ["./src/components"],
+      "lib": ["./src/lib"],
+      "types": ["./src/types"],
+      "utils": ["./src/utils"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "src/pages/api/user.js"],

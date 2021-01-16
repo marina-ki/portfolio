@@ -5,5 +5,6 @@ export * from "./SkillList";
 export * from "./Title";
 export * from "./QualificationList";
 export * from "./cards";
+export * from "./common";
 export * from "./icons";
 export * from "./layouts";
