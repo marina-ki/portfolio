@@ -1,11 +1,11 @@
-import React, { FC, useState, useEffect } from "react";
-import { skills } from "../utils/skills";
-import { SkillIcon } from "./SkillIcon";
+import React, { FC } from "react"
+import { skills } from "utils"
+import { SkillIcon } from "./SkillIcon"
 
-type Props = {};
+type Props = {}
 
 export const SkillList: FC<Props> = (props) => {
-  const {} = props;
+  const {} = props
 
   return (
     <div className="pb-8">
@@ -15,5 +15,5 @@ export const SkillList: FC<Props> = (props) => {
         </div>
       ))}
     </div>
-  );
-};
+  )
+}

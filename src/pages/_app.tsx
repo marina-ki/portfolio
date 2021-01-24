@@ -1,13 +1,12 @@
-import "tailwindcss/tailwind.css";
-import { AppProps } from "next/app";
-import { Meta } from "../components/common/Meta";
+import { AppProps } from "next/app"
+import "tailwindcss/tailwind.css"
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
       <Component {...pageProps} />
     </>
-  );
+  )
 }
 
-export default MyApp;
+export default MyApp

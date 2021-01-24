@@ -1,6 +1,6 @@
-import { Article } from "../../types";
-import { getBlog } from "../../lib/api";
-import { ArticleIndexCard, Header, Meta } from "../../components";
+import { ArticleIndexCard, Header, Meta } from "components"
+import { getBlog } from "lib"
+import { Article } from "types"
 
 export default function Blog({ contents }: { contents: Article[] }) {
   return (
@@ -21,15 +21,15 @@ export default function Blog({ contents }: { contents: Article[] }) {
         </ul>
       </main>
     </>
-  );
+  )
 }
 
 // データをテンプレートに受け渡す部分の処理を記述します
 export const getStaticProps = async (context: { params: { id: string } }) => {
-  const data = await getBlog();
+  const data = await getBlog()
   return {
     props: {
       contents: data.contents,
     },
-  };
-};
+  }
+}

@@ -1,30 +1,21 @@
-import React, { FC, useState, useEffect } from "react";
-import { GithubIcon, TwitterIcon, ZennIcon, EmailIcon } from "../icons";
-import { ProfileIcon } from "../ProfileIcon";
+import { EmailIcon, GithubIcon, ProfileIcon, TwitterIcon, ZennIcon } from "components"
+import React, { FC } from "react"
 
-type Props = {};
+type Props = {}
 
 export const ProfileCard: FC<Props> = (props) => {
-  const {} = props;
+  const {} = props
 
   return (
     <div className="flex flex-col items-center justify-center bg-white p-4 shadow-lg rounded-lg border border-gray-200">
       <div className="shadow-xl border border-gray-200 rounded-full overflow-hidden h-40 w-40">
-        <img
-          src="/neko.jpg"
-          alt="kamichan"
-          className="h-40 w-40 object-contain"
-        />
+        <img src="/neko.jpg" alt="kamichan" className="h-40 w-40 object-contain" />
       </div>
 
       <h2 className="mt-4 font-bold text-xl">Marina</h2>
-      <p className="mt-2 text-sm font-medium">
-        Mobile Engineer | Backend Engineer
-      </p>
+      <p className="mt-2 text-sm font-medium">Mobile Engineer | Backend Engineer</p>
 
-      <p className="text-xs text-gray-500 text-center mt-3">
-        React Native Lover
-      </p>
+      <p className="text-xs text-gray-500 text-center mt-3">React Native Lover</p>
 
       <ul className="flex flex-row mt-4 space-x-2">
         <ProfileIcon href="https://github.com/marina-ki" name="github">
@@ -41,5 +32,5 @@ export const ProfileCard: FC<Props> = (props) => {
         </ProfileIcon>
       </ul>
     </div>
-  );
-};
+  )
+}

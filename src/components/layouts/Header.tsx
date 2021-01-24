@@ -1,8 +1,8 @@
-import React, { FC, useState, useEffect } from "react";
-import Link from "next/link";
-import { Logo } from "../icons";
+import { Logo } from "@src/components/icons"
+import Link from "next/link"
+import React, { FC } from "react"
 
-type Props = {};
+type Props = {}
 
 export const Header: FC<Props> = (props) => {
   return (
@@ -41,5 +41,5 @@ export const Header: FC<Props> = (props) => {
         </div>
       </div>
     </header>
-  );
-};
+  )
+}

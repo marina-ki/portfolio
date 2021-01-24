@@ -1,47 +1,47 @@
-import React, { FC, useState, useEffect } from "react";
-import { skills } from "@src/utils/skills";
-import { HtmlIcon } from "./icons/HtmlIcon";
-import { RubyIcon } from "./icons/RubyIcon";
-import { RailsIcon } from "./icons/RailsIcon";
+import React, { FC } from "react"
+import { skills } from "utils"
 import {
-  TypeScriptIcon,
-  JavaScriptIcon,
-  ReactIcon,
-  GraphqlIcon,
   ApolloIcon,
-  CssIcon,
   BlitzIcon,
-} from "./icons";
+  CssIcon,
+  GraphqlIcon,
+  HtmlIcon,
+  JavaScriptIcon,
+  RailsIcon,
+  ReactIcon,
+  RubyIcon,
+  TypeScriptIcon,
+} from "./icons"
 
 type Props = {
-  name: typeof skills[number]["name"];
-};
+  name: typeof skills[number]["name"]
+}
 
 export const SkillIcon: FC<Props> = (props) => {
-  const { name } = props;
+  const { name } = props
 
   switch (name) {
     case "React":
-      return <ReactIcon />;
+      return <ReactIcon />
     case "GraphQL":
-      return <GraphqlIcon />;
+      return <GraphqlIcon />
     case "Apollo":
-      return <ApolloIcon />;
+      return <ApolloIcon />
     case "TypeScript":
-      return <TypeScriptIcon />;
+      return <TypeScriptIcon />
     case "JavaScript":
-      return <JavaScriptIcon />;
+      return <JavaScriptIcon />
     case "html":
-      return <HtmlIcon />;
+      return <HtmlIcon />
     case "css":
-      return <CssIcon />;
+      return <CssIcon />
     case "blitz":
-      return <BlitzIcon />;
+      return <BlitzIcon />
     case "Ruby":
-      return <RubyIcon />;
+      return <RubyIcon />
     case "RubyOnRails":
-      return <RailsIcon />;
+      return <RailsIcon />
     default:
-      return null;
+      return null
   }
-};
+}

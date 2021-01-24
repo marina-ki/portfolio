@@ -1,5 +1,3 @@
-import { Skill } from "../types";
-
 export const skills = [
   { name: "React" },
   { name: "GraphQL" },
@@ -11,4 +9,4 @@ export const skills = [
   { name: "blitz" },
   { name: "Ruby" },
   { name: "RubyOnRails" },
-] as const;
+] as const

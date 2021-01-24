@@ -1,23 +1,21 @@
-import { PostItem } from "../types";
-import { PostList, Logo, Title } from "../components";
-import posts from "../../.contents/posts.json";
-import { Header, SkillList, ProfileCard } from "../components";
-import { Meta } from "../components/common/Meta";
-import { useEffect } from "react";
+import posts from "@.contents/posts.json"
+import { Header, Meta, PostList, ProfileCard, Title } from "components"
+import { useEffect } from "react"
+import { PostItem } from "types"
 
 export default function Home({}) {
-  console.log("please Enter s on window");
+  console.log("please Enter s on window")
 
   const escFunction = (e: KeyboardEvent) => {
     if (e.keyCode == 83) {
-      const log = "🍺".repeat(10000);
-      console.log(log);
+      const log = "🍺".repeat(10000)
+      console.log(log)
     }
-  };
+  }
 
   useEffect(() => {
-    document.addEventListener("keydown", escFunction, false);
-  }, []);
+    document.addEventListener("keydown", escFunction, false)
+  }, [])
 
   return (
     <>
@@ -38,5 +36,5 @@ export default function Home({}) {
         </section>
       </main>
     </>
-  );
+  )
 }
