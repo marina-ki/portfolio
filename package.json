@@ -21,9 +21,11 @@
     }
   },
   "lint-staged": {
+    "*.{js,ts,tsx}": [
+      "eslint --fix"
+    ],
     "*.{ts,tsx}": [
-      "organize-imports-cli",
-      "prettier --write"
+      "organize-imports-cli"
     ]
   },
   "dependencies": {
