@@ -1,16 +1,16 @@
-import React, { FC, useState, useEffect } from "react";
-import { Article } from "../../types";
-import Link from "next/link";
-import { format } from "date-fns";
+import { format } from "date-fns"
+import Link from "next/link"
+import React, { FC } from "react"
+import { Article } from "types"
 
 type Props = {
-  article: Article;
-};
+  article: Article
+}
 
 export const ArticleIndexCard: FC<Props> = (props): JSX.Element => {
   const {
     article: { id, title, publishedAt, category },
-  } = props;
+  } = props
 
   return (
     <Link href={`/blog/${id}`}>
@@ -35,5 +35,5 @@ export const ArticleIndexCard: FC<Props> = (props): JSX.Element => {
         </div>
       </a>
     </Link>
-  );
-};
+  )
+}
