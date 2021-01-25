@@ -1,22 +1,22 @@
-import fs from "fs-extra";
-import Parser from "rss-parser";
-import { FeedItem, PostItem } from "types";
-import { member } from "utils";
+import fs from "fs-extra"
+import Parser from "rss-parser"
+import { FeedItem, PostItem } from "types"
+import { member } from "../utils"
 
-export default {};
+export default {}
 
-const parser = new Parser();
+const parser = new Parser()
 
 async function fetchFeedItems(url: string) {
-  const feed = await parser.parseURL(url);
-  let sourceType: PostItem["sourceType"];
+  const feed = await parser.parseURL(url)
+  let sourceType: PostItem["sourceType"]
   if (url.indexOf("zenn") !== -1) {
-    sourceType = "zenn";
+    sourceType = "zenn"
   } else if (url.indexOf("qiita") !== -1) {
-    sourceType = "qiita";
+    sourceType = "qiita"
   }
 
-  if (!feed?.items?.length) return [];
+  if (!feed?.items?.length) return []
 
   // return item which has title and link
   return feed.items
@@ -28,26 +28,26 @@ async function fetchFeedItems(url: string) {
         isoDate,
         dateMiliSeconds: isoDate ? new Date(isoDate).getTime() : 0,
         sourceType,
-      };
+      }
     })
-    .filter(({ title, link }) => title && link) as FeedItem[];
+    .filter(({ title, link }) => title && link) as FeedItem[]
 }
 
 async function getFeedItemsFromSources(sources: undefined | string[]) {
-  if (!sources?.length) return [];
-  let feedItems: FeedItem[] = [];
+  if (!sources?.length) return []
+  let feedItems: FeedItem[] = []
   try {
     for (const url of sources) {
-      const items = await fetchFeedItems(url);
-      if (items) feedItems = [...feedItems, ...items];
+      const items = await fetchFeedItems(url)
+      if (items) feedItems = [...feedItems, ...items]
     }
-    return feedItems;
+    return feedItems
   } catch (error) {}
 }
 
-(async function () {
-  const items = (await getFeedItemsFromSources(member.sources)) ?? [];
-  items.sort((a, b) => b.dateMiliSeconds - a.dateMiliSeconds);
-  fs.ensureDirSync(".contents");
-  fs.writeJsonSync(".contents/posts.json", items);
-})();
+;(async function () {
+  const items = (await getFeedItemsFromSources(member.sources)) ?? []
+  items.sort((a, b) => b.dateMiliSeconds - a.dateMiliSeconds)
+  fs.ensureDirSync(".contents")
+  fs.writeJsonSync(".contents/posts.json", items)
+})()
