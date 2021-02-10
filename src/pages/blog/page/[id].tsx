@@ -1,14 +1,17 @@
 import { BlogIndex } from "components"
 import { getBlog } from "lib"
-import { GetStaticProps, InferGetStaticPropsType } from "next"
+import { GetStaticProps } from "next"
 import { Article } from "types"
 import { BLOG_PER_PAGE, range } from "utils"
 
-export default function BlogPageId({
-  contents,
-  totalCount,
-}: InferGetStaticPropsType<typeof getStaticProps>) {
-  return <BlogIndex {...{ contents, totalCount }} />
+type Props = {
+  contents: Article[]
+  totalCount: number
+  currentPage: number
+}
+
+export default function BlogPageId({ contents, totalCount, currentPage }: Props) {
+  return <BlogIndex {...{ contents, totalCount, currentPage }} />
 }
 
 // 動的なページを作成
@@ -21,7 +24,7 @@ export const getStaticPaths = async () => {
 }
 
 // データを取得
-export const getStaticProps: GetStaticProps = async (context) => {
+export const getStaticProps: GetStaticProps<Props> = async (context) => {
   const id = context.params?.id as string
   const offset = (Number(id) - 1) * BLOG_PER_PAGE
   const data: {
@@ -32,6 +35,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
     props: {
       contents: data.contents,
       totalCount: data.totalCount,
+      currentPage: Number(id),
     },
   }
 }

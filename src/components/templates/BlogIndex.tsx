@@ -6,9 +6,10 @@ import { BLOG_PER_PAGE } from "utils"
 type Props = {
   contents: Article[]
   totalCount: number
+  currentPage: number
 }
 
-export const BlogIndex: FC<Props> = ({ contents, totalCount }) => {
+export const BlogIndex: FC<Props> = ({ contents, totalCount, currentPage }) => {
   return (
     <>
       <Meta
@@ -25,7 +26,7 @@ export const BlogIndex: FC<Props> = ({ contents, totalCount }) => {
             </li>
           ))}
         </ul>
-        <Pagination totalCount={totalCount} perPage={BLOG_PER_PAGE} />
+        <Pagination totalCount={totalCount} perPage={BLOG_PER_PAGE} currentPage={currentPage} />
       </main>
     </>
   )

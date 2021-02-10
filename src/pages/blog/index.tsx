@@ -1,18 +1,20 @@
 import { BlogIndex } from "components"
 import { getBlog } from "lib"
-import { GetStaticProps, InferGetStaticPropsType } from "next"
+import { GetStaticProps } from "next"
 import { Article } from "types"
 import { BLOG_PER_PAGE } from "utils"
 
-export default function Blog({
-  contents,
-  totalCount,
-}: InferGetStaticPropsType<typeof getStaticProps>) {
-  return <BlogIndex {...{ contents, totalCount }} />
+type Props = {
+  contents: Article[]
+  totalCount: number
+}
+
+export default function Blog({ contents, totalCount }: Props) {
+  return <BlogIndex {...{ contents, totalCount, currentPage: 1 }} />
 }
 
 // データをテンプレートに受け渡す部分の処理を記述します
-export const getStaticProps: GetStaticProps = async (context) => {
+export const getStaticProps: GetStaticProps<Props> = async (context) => {
   const data: {
     contents: Article[]
     totalCount: number
