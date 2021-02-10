@@ -1,22 +1,24 @@
+import { BLOG_API } from "utils"
+
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
-export const BLOG_API = "https://marina.microcms.io/api/v1/blog";
 const key = {
   headers: { "X-API-KEY": process.env.API_KEY ?? "" },
-};
+}
 
-export const getBlog = async () => {
+export const getBlog = async (args?: { offset: number; limit: number }) => {
+  const params = args ? `?offset=${args.offset}&limit=${args.limit}` : ""
   try {
-    return await fetch(BLOG_API, key)
+    return await fetch(`${BLOG_API}${params}`, key)
       .then((res) => res.json())
-      .catch(() => null);
+      .catch(() => null)
   } catch (error) {}
-};
+}
 
 export const getArticle = async (id: string, draftKey?: string) => {
-  const params = draftKey ? `?draftKey=${draftKey}` : "";
+  const params = draftKey ? `?draftKey=${draftKey}` : ""
   try {
     return await fetch(`${BLOG_API}/${id}${params}`, key)
       .then((res) => res.json())
-      .catch(() => null);
+      .catch(() => null)
   } catch (error) {}
-};
+}

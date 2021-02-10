@@ -1,35 +1,28 @@
-import { ArticleIndexCard, Header, Meta } from "components"
+import { BlogIndex } from "components"
 import { getBlog } from "lib"
+import { GetStaticProps } from "next"
 import { Article } from "types"
+import { BLOG_PER_PAGE } from "utils"
 
-export default function Blog({ contents }: { contents: Article[] }) {
-  return (
-    <>
-      <Meta
-        title="Blog"
-        description="Marina | Mobile Engineer."
-        image="https://images.microcms-assets.io/protected/ap-northeast-1:7b46820b-9e1b-4aab-ba38-e994b4176f3c/service/marina/media/marinya.png"
-      />
-      <Header />
-      <main className="max-w-3xl mx-auto px-4 sm:px-6 xl:max-w-5xl xl:px-0 mt-10">
-        <ul className="grid sm:grid-cols-2 xl:grid-cols-3 gap-6">
-          {contents.map((article) => (
-            <li key={article.id}>
-              <ArticleIndexCard article={article} />
-            </li>
-          ))}
-        </ul>
-      </main>
-    </>
-  )
+type Props = {
+  contents: Article[]
+  totalCount: number
+}
+
+export default function Blog({ contents, totalCount }: Props) {
+  return <BlogIndex {...{ contents, totalCount, currentPage: 1 }} />
 }
 
 // データをテンプレートに受け渡す部分の処理を記述します
-export const getStaticProps = async (context: { params: { id: string } }) => {
-  const data = await getBlog()
+export const getStaticProps: GetStaticProps<Props> = async (context) => {
+  const data: {
+    contents: Article[]
+    totalCount: number
+  } = await getBlog({ offset: 0, limit: BLOG_PER_PAGE })
   return {
     props: {
       contents: data.contents,
+      totalCount: data.totalCount,
     },
   }
 }

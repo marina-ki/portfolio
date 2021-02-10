@@ -1,5 +1,7 @@
 export * from "./ApolloIcon"
 export * from "./BlitzIcon"
+export * from "./ChevronLeftIcon"
+export * from "./ChevronRightIcon"
 export * from "./CssIcon"
 export * from "./EmailIcon"
 export * from "./GithubIcon"
