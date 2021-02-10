@@ -17,7 +17,7 @@ export const Pagination: FC<Props> = ({ totalCount, currentPage, perPage = 5 }) 
       <div className="w-10">
         {currentPage > 1 && (
           <Link href={`/blog/page/${currentPage - 1}`}>
-            <a className="flex pt-4">
+            <a className="flex pt-3">
               <ChevronLeftIcon className="text-gray-500 w-6 h-6 hover:text-gray-900" />
             </a>
           </Link>
@@ -46,7 +46,7 @@ export const Pagination: FC<Props> = ({ totalCount, currentPage, perPage = 5 }) 
       <div className="w-10">
         {currentPage < maxPage && (
           <Link href={`/blog/page/${currentPage + 1}`}>
-            <a className="flex pt-4">
+            <a className="flex pt-3">
               <ChevronRightIcon className="text-gray-500 w-6 h-6 hover:text-gray-900" />
             </a>
           </Link>
