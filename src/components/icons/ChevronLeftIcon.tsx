@@ -1,8 +1,18 @@
-import React, { FC } from "react"
+import React, { FC, SVGAttributes } from "react"
 
-export const ChevronLeftIcon: FC = (props) => {
+type Props = {
+  className?: SVGAttributes<SVGSVGElement>["className"]
+}
+
+export const ChevronLeftIcon: FC<Props> = ({ className }) => {
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke="currentColor"
+      className={className}
+    >
       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
     </svg>
   )
