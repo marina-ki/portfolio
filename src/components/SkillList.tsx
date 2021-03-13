@@ -10,7 +10,7 @@ export const SkillList: FC<Props> = (props) => {
   return (
     <div className="pb-8">
       {skills.map((skill) => (
-        <a className="inline-block pb-2 pr-4" href={item.href}>
+        <a className="inline-block pb-2 pr-4" href={skill.href}>
           <SkillIcon name={skill.name} />
         </a>
       ))}
