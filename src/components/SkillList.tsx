@@ -10,9 +10,9 @@ export const SkillList: FC<Props> = (props) => {
   return (
     <div className="pb-8">
       {skills.map((skill) => (
-        <div className="inline-block pr-4 pb-2">
+        <a className="inline-block pb-2 pr-4" href={item.href}>
           <SkillIcon name={skill.name} />
-        </div>
+        </a>
       ))}
     </div>
   )
