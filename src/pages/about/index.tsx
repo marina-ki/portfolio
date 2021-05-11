@@ -1,4 +1,12 @@
-import { AboutItem, Header, Meta, QualificationList, SkillList, Title } from "components"
+import {
+  AboutItem,
+  HackathonList,
+  Header,
+  Meta,
+  QualificationList,
+  SkillList,
+  Title,
+} from "components"
 import { getBlog } from "lib"
 
 const contents = [
@@ -46,6 +54,10 @@ export default function About() {
         <section className="border-b-2 border-gray-200">
           <Title>Qualifications</Title>
           <QualificationList />
+        </section>
+        <section className="border-b-2 border-gray-200">
+          <Title>Hackathon</Title>
+          <HackathonList />
         </section>
         <Title>Education ＆ Career</Title>
         <ul className="p-2 bg-gray-50 rounded-3xl sm:p-5 xl:p-6">

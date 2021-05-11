@@ -1,6 +1,7 @@
 export * from "./AboutItem"
 export * from "./cards"
 export * from "./common"
+export * from "./HackathonList"
 export * from "./icons"
 export * from "./layouts"
 export * from "./Pagination"
