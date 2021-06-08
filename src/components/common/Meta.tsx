@@ -1,22 +1,21 @@
-import Head from "next/head";
+import Head from "next/head"
 
 type Props = {
-  children?: React.ReactNode;
-  title?: string;
-  description?: string;
-  image?: string;
-  type?: string;
-};
+  children?: React.ReactNode
+  title?: string
+  description?: string
+  image?: string
+  type?: string
+}
 
 export const Meta: React.FC<Props> = (props) => {
-  const { title, description, image, type, children } = props;
+  const { image, type, children } = props
+  const description = props.description ?? ""
+  const title = props.title ? `${props.title} - marinya.dev` : `marinya.dev`
   return (
     <Head>
-      <title>{title ? `${title} - marinya.dev` : `marinya.dev`}</title>
-      <meta
-        name="description"
-        content={description ? `${description}` : `まりにゃんのサイトです。`}
-      />
+      <title>{title}</title>
+      <meta name="description" content={description} />
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />
       <meta
@@ -41,5 +40,5 @@ export const Meta: React.FC<Props> = (props) => {
       />
       {children}
     </Head>
-  );
-};
+  )
+}
