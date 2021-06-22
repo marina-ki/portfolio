@@ -1,39 +1,36 @@
 import {
   AboutItem,
+  AboutSection,
   HackathonList,
   Header,
   Meta,
   QualificationList,
   SkillList,
-  Title,
 } from "components"
 import { getBlog } from "lib"
 
 const contents = [
-  { title: "東京大学理科一類 入学", date: "2017.04" },
-  { title: "東京大学精密工学科 進学", date: "2019.04" },
-  { title: "休学", date: "2019.04" },
   {
-    title: "バックエンドエンジニア",
-    date: "2019.08",
+    title: "株式会社Porme",
+    date: "2019.08-2019.11",
+
     body: "友人の起業したスタートアップでバックエンドエンジニアとして携わる。主にRailsを使用。",
   },
   {
-    title: "バックエンドエンジニア",
-    date: "2019.12",
-    body: "現在の会社にバックエンドエンジニアとしてインターンを始める。主にRailsを使用。",
-  },
-  {
-    title: "モバイルエンジニア",
-    date: "2020.02",
+    title: "株式会社Palan",
+    date: "2019.12-現在",
     body:
-      "デザインが形になるところに感動を感じ，フロントエンドエンジニア・モバイルエンジニアになろうと決める。主にReact Nativeを使用してアプリ開発をする。",
+      "バックエンド(3ヶ月)→モバイル(１年)→フロントエンド(半年)と一通り経験。Rails、React Native、Blitz.js、GraphQLなどを使用。",
   },
-  { title: "復学", date: "2020.10" },
   {
-    title: "フロントエンドエンジニア",
-    date: "2021.01",
-    body: "Blitz.jsに惹かれ、Blitz.jsを使ってwebサービスを開発。",
+    title: "Appify Technologies, Inc.",
+    date: "2021.05-現在",
+    body: "フロントエンド。ReactやGraphQLを使用。",
+  },
+  {
+    title: "株式会社サイバーエージェント",
+    date: "2021.06",
+    body: "フロントエンド。Reactを使用。Amebaマンガでパフォーマンスを改善。",
   },
 ]
 
@@ -47,31 +44,36 @@ export default function About() {
       />
       <Header />
       <main className="max-w-3xl px-4 mx-auto mb-10 sm:px-6 xl:max-w-5xl xl:px-0">
-        <section className="border-b-2 border-gray-200">
-          <Title>Skills</Title>
+        <AboutSection title="Skills">
           <SkillList />
-        </section>
-        <section className="border-b-2 border-gray-200">
-          <Title>Qualifications</Title>
+        </AboutSection>
+        <AboutSection title="Qualifications">
           <QualificationList />
-        </section>
-        <section className="border-b-2 border-gray-200">
-          <Title>Hackathon</Title>
+        </AboutSection>
+        <AboutSection title="Hackathon">
           <HackathonList />
-        </section>
-        <Title>Education ＆ Career</Title>
-        <ul className="p-2 bg-gray-50 rounded-3xl sm:p-5 xl:p-6">
-          {contents.map((content, i) => (
-            <AboutItem
-              date={content.date}
-              title={content.title}
-              body={content.body}
-              key={i}
-              isLast={contents.length === i + 1}
-              isFirst={i === 0}
-            />
-          ))}
-        </ul>
+        </AboutSection>
+        <AboutSection title="Education">
+          <div className="pb-8 prose">
+            <ul>
+              <li>東京大学工学部(23年卒)</li>
+            </ul>
+          </div>
+        </AboutSection>
+        <AboutSection title="Career">
+          <ul className="p-2 bg-gray-50 rounded-3xl sm:p-5 xl:p-6">
+            {contents.map((content, i) => (
+              <AboutItem
+                date={content.date}
+                title={content.title}
+                body={content.body}
+                key={i}
+                isLast={contents.length === i + 1}
+                isFirst={i === 0}
+              />
+            ))}
+          </ul>
+        </AboutSection>
       </main>
     </>
   )

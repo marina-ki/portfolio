@@ -1,4 +1,4 @@
-export * from "./AboutItem"
+export * from "./about"
 export * from "./cards"
 export * from "./common"
 export * from "./HackathonList"
