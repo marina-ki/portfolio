@@ -6,33 +6,47 @@ type Props = {
   body?: string
   isLast?: boolean
   isFirst?: boolean
+  isActive?: boolean
 }
 
 export const AboutItem: FC<Props> = (props) => {
-  const { title, date, body, isLast, isFirst } = props
+  const { title, date, body, isLast, isFirst, isActive } = props
+  const hasUpperLine = !isFirst
+  const hasBottomLine = !isLast
 
   return (
     <li>
       <article>
-        <div className="grid md:grid-cols-8 xl:grid-cols-9 items-start relative rounded-xl p-3 sm:p-5 xl:p-6 overflow-hidden">
-          <h3 className="font-semibold text-gray-900 md:col-start-3 md:col-span-6 xl:col-start-3 xl:col-span-7 mb-1 ml-9 md:ml-0">
+        <div className="relative grid items-start p-3 overflow-hidden md:grid-cols-8 xl:grid-cols-9 rounded-xl sm:p-5 xl:p-6">
+          <h3 className="mb-1 font-semibold text-gray-900 md:col-start-3 md:col-span-6 xl:col-start-3 xl:col-span-7 ml-9 md:ml-0">
             {title}
           </h3>
           <time
             dateTime={date}
-            className="md:col-start-1 md:col-span-2 row-start-1 md:row-end-3 flex items-center font-medium mb-1 md:mb-0 text-gray-500"
+            className="flex items-center row-start-1 mb-1 font-medium text-gray-500 md:col-start-1 md:col-span-3 md:row-end-3 md:mb-0"
           >
-            {isLast ? (
-              <svg viewBox="0 0 12 12" className="w-3 h-3 mr-6 overflow-visible text-blue-400">
+            <svg
+              viewBox="0 0 12 12"
+              className={`w-3 h-3 mr-6 overflow-visible ${
+                isActive ? "text-blue-400" : "text-gray-300"
+              }`}
+            >
+              {isActive ? (
+                <>
+                  <circle cx="6" cy="6" r="6" fill="currentColor"></circle>
+                  <circle
+                    cx="6"
+                    cy="6"
+                    r="11"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  ></circle>
+                </>
+              ) : (
                 <circle cx="6" cy="6" r="6" fill="currentColor"></circle>
-                <circle
-                  cx="6"
-                  cy="6"
-                  r="11"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                ></circle>
+              )}
+              {hasUpperLine && (
                 <path
                   d="M 6 -6 V -30"
                   fill="none"
@@ -40,19 +54,8 @@ export const AboutItem: FC<Props> = (props) => {
                   stroke="currentColor"
                   className="text-gray-200"
                 ></path>
-              </svg>
-            ) : (
-              <svg viewBox="0 0 12 12" className="w-3 h-3 mr-6 overflow-visible text-gray-300">
-                <circle cx="6" cy="6" r="6" fill="currentColor"></circle>
-                {!isFirst && (
-                  <path
-                    d="M 6 -6 V -30"
-                    fill="none"
-                    stroke-width="2"
-                    stroke="currentColor"
-                    className="text-gray-200"
-                  ></path>
-                )}
+              )}
+              {hasBottomLine && (
                 <path
                   d="M 6 18 V 500"
                   fill="none"
@@ -60,13 +63,13 @@ export const AboutItem: FC<Props> = (props) => {
                   stroke="currentColor"
                   className="text-gray-200"
                 ></path>
-              </svg>
-            )}
+              )}
+            </svg>
 
             {date}
           </time>
           {body && (
-            <p className="md:col-start-3 md:col-span-6 xl:col-span-7 ml-9 md:ml-0  text-gray-500">
+            <p className="text-gray-500 md:col-start-4 md:col-span-5 xl:col-span-6 ml-9 md:ml-0">
               {body}
             </p>
           )}

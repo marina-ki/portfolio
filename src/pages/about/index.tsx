@@ -21,6 +21,7 @@ const contents = [
     date: "2019.12-now",
     body:
       "バックエンド(3ヶ月)→モバイル(１年)→フロントエンド(半年)と一通り経験。Rails、React Native、Blitz.js、GraphQLなどを使用。",
+    isActive: true,
   },
   {
     title: "Appify Technologies, Inc.",
@@ -36,6 +37,7 @@ const contents = [
     title: "株式会社メルカリ",
     date: "2021.08-2021.09",
     body: "メルカリのweb版でフロントエンドをやる。Reactを使用。",
+    isActive: true,
   },
   {
     title: "ピクシブ株式会社",
@@ -80,6 +82,7 @@ export default function About() {
                 key={i}
                 isLast={contents.length === i + 1}
                 isFirst={i === 0}
+                isActive={content.isActive}
               />
             ))}
           </ul>
