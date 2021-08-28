@@ -18,19 +18,29 @@ const contents = [
   },
   {
     title: "株式会社Palan",
-    date: "2019.12-現在",
+    date: "2019.12-now",
     body:
       "バックエンド(3ヶ月)→モバイル(１年)→フロントエンド(半年)と一通り経験。Rails、React Native、Blitz.js、GraphQLなどを使用。",
   },
   {
     title: "Appify Technologies, Inc.",
-    date: "2021.05-現在",
+    date: "2021.05-2021.08",
     body: "フロントエンド。ReactやGraphQLを使用。",
   },
   {
     title: "株式会社サイバーエージェント",
     date: "2021.06",
     body: "フロントエンド。Reactを使用。Amebaマンガでパフォーマンスを改善。",
+  },
+  {
+    title: "株式会社メルカリ",
+    date: "2021.08-2021.09",
+    body: "メルカリのweb版でフロントエンドをやる。Reactを使用。",
+  },
+  {
+    title: "ピクシブ株式会社",
+    date: "2021.10-2021.12",
+    body: "TODO",
   },
 ]
 
