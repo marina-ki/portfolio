@@ -1,7 +1,8 @@
 import React, { FC } from "react"
 
 type Props = {
-  date: string
+  since: string
+  until?: string
   title: string
   body?: string
   isLast?: boolean
@@ -10,7 +11,7 @@ type Props = {
 }
 
 export const AboutItem: FC<Props> = (props) => {
-  const { title, date, body, isLast, isFirst, isActive } = props
+  const { title, since, until, body, isLast, isFirst, isActive } = props
   const hasUpperLine = !isFirst
   const hasBottomLine = !isLast
 
@@ -22,8 +23,8 @@ export const AboutItem: FC<Props> = (props) => {
             {title}
           </h3>
           <time
-            dateTime={date}
-            className="flex items-center row-start-1 mb-1 font-medium text-gray-500 md:col-start-1 md:col-span-3 md:row-end-3 md:mb-0"
+            dateTime={since}
+            className="flex items-center row-start-1 mb-1 font-medium text-gray-500 md:col-start-1 md:col-span-2 md:row-end-3 md:mb-0"
           >
             <svg
               viewBox="0 0 12 12"
@@ -65,11 +66,17 @@ export const AboutItem: FC<Props> = (props) => {
                 ></path>
               )}
             </svg>
-
-            {date}
+            {since}
+            {until ? (
+              <>
+                <br />-{until}
+              </>
+            ) : (
+              <></>
+            )}
           </time>
           {body && (
-            <p className="text-gray-500 md:col-start-4 md:col-span-5 xl:col-span-6 ml-9 md:ml-0">
+            <p className="text-gray-500 md:col-start-3 md:col-span-6 xl:col-span-7 ml-9 md:ml-0">
               {body}
             </p>
           )}
