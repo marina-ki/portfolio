@@ -9,7 +9,7 @@ export const AboutSection: FC<Props> = (props) => {
   const { children, title } = props
 
   return (
-    <section className="border-b-2 border-gray-200">
+    <section className="pb-4 border-b-2 border-gray-200">
       <Title>{title}</Title>
       {children}
     </section>

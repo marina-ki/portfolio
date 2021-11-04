@@ -1,7 +1,5 @@
-import posts from "@.contents/posts.json"
-import { Header, Meta, PostList, ProfileCard, Title } from "components"
+import { About, Header, Meta, ProfileCard } from "components"
 import { useEffect } from "react"
-import { PostItem } from "types"
 
 export default function Home() {
   console.log("please Enter s on window")
@@ -21,7 +19,7 @@ export default function Home() {
     <>
       <Meta
         title="Portfolio"
-        description="Marina | Mobile Engineer."
+        description="Marina | Software Engineer."
         image="https://images.microcms-assets.io/protected/ap-northeast-1:7b46820b-9e1b-4aab-ba38-e994b4176f3c/service/marina/media/marinya.png"
       />
       <Header />
@@ -30,10 +28,7 @@ export default function Home() {
           <ProfileCard />
         </section>
 
-        <section>
-          <Title>Articles</Title>
-          <PostList items={posts as PostItem[]} />
-        </section>
+        <About />
       </main>
     </>
   )

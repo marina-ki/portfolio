@@ -25,12 +25,12 @@ export const Header: FC<Props> = (props) => {
               Blog
             </a>
           </Link> */}
-          <Link href="/about">
+          <Link href="/articles">
             <a
               className="ml-4 font-medium text-gray-500 hover:text-gray-900 sm:ml-12"
-              aria-label="aboutページに移動"
+              aria-label="articlesページに移動"
             >
-              About
+              Articles
             </a>
           </Link>
           {/* <Link href="/contact">
