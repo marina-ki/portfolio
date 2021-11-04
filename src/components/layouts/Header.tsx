@@ -6,9 +6,9 @@ type Props = {}
 
 export const Header: FC<Props> = (props) => {
   return (
-    <header className="z-10 border-b border-gray-200 bg-white sticky top-0">
+    <header className="sticky top-0 z-10 bg-white border-b border-gray-200">
       <div className="flex items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
-        <div className="md:flex items-center">
+        <div className="items-center md:flex">
           <Link href="/">
             <a className="block" aria-label="トップに移動">
               <Logo />
@@ -17,14 +17,14 @@ export const Header: FC<Props> = (props) => {
         </div>
 
         <div className="flex text-sm">
-          <Link href="/blog">
+          {/* <Link href="/blog">
             <a
               className="font-medium text-gray-500 hover:text-gray-900"
               aria-label="ブログページに移動"
             >
               Blog
             </a>
-          </Link>
+          </Link> */}
           <Link href="/about">
             <a
               className="ml-4 font-medium text-gray-500 hover:text-gray-900 sm:ml-12"
