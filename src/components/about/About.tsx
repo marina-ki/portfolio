@@ -31,13 +31,13 @@ const contents = [
     since: "2021.08",
     until: "2021.09",
     body: "メルカリのweb版でフロントエンドをやる。Reactを使用。",
-    isActive: true,
   },
   {
     title: "ピクシブ株式会社",
     since: "2021.10",
     until: "2021.12",
     body: "pixiv小説でフロントエンドをやる。ReactとVueを使用。",
+    isActive: true,
   },
 ]
 

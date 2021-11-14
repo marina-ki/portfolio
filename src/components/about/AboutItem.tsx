@@ -49,7 +49,7 @@ export const AboutItem: FC<Props> = (props) => {
               )}
               {hasUpperLine && (
                 <path
-                  d="M 6 -6 V -30"
+                  d="M 6 -6 V -40"
                   fill="none"
                   stroke-width="2"
                   stroke="currentColor"
