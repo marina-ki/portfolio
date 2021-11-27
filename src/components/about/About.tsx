@@ -24,7 +24,7 @@ const contents = [
   {
     title: "株式会社サイバーエージェント",
     since: "2021.06",
-    body: "フロントエンド。Reactを使用。Amebaマンガでパフォーマンスを改善。",
+    body: "Amebaマンガでパフォーマンスを改善。Reactを使用。",
   },
   {
     title: "株式会社メルカリ",
@@ -35,9 +35,21 @@ const contents = [
   {
     title: "ピクシブ株式会社",
     since: "2021.10",
-    until: "2021.12",
-    body: "pixiv小説でフロントエンドをやる。ReactとVueを使用。",
+    until: "2021.11",
+    body: "pixiv小説でフロントエンドとバックエンドをやる。React、Vue、PHPを使用。",
+  },
+  {
+    title: "株式会社Flatt Security",
+    since: "2021.11",
+    until: "now",
+    body: "TODO",
     isActive: true,
+  },
+  {
+    title: "奈良先端科学技術大学院大学(NAIST)",
+    since: "2022.2",
+    until: "2022.3",
+    body: "情報セキュリティ工学研究室",
   },
 ]
 
