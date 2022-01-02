@@ -2,11 +2,22 @@ import { Header, Meta } from "components"
 import { format } from "date-fns"
 import { getArticle, getBlog } from "lib"
 import type { GetStaticProps } from "next"
+import { useEffect, useState } from "react"
 import { Article, Draft } from "types"
 
 // pages/blog/[id].js
 export default function BlogId({ blog, preview }: { blog: Article | Draft; preview: boolean }) {
   const url = `https://og-image-1.vercel.app/${blog.title}.png`
+  const [loaded, setLoaded] = useState(false)
+  useEffect(() => {
+    const s = document.createElement("script")
+    s.setAttribute("src", "https://platform.twitter.com/widgets.js")
+    s.setAttribute("async", "true")
+    document.head.appendChild(s)
+    setLoaded(true)
+  }, [])
+
+  if (!loaded) return null
 
   return (
     <>
