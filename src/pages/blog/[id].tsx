@@ -17,8 +17,6 @@ export default function BlogId({ blog, preview }: { blog: Article | Draft; previ
     setLoaded(true)
   }, [])
 
-  if (!loaded) return null
-
   return (
     <>
       <Meta title={blog.title} description="" image={encodeURI(url)} />
@@ -29,21 +27,25 @@ export default function BlogId({ blog, preview }: { blog: Article | Draft; previ
         </a>
       )}
       <main className="max-w-3xl mx-auto px-4 sm:px-6 xl:max-w-5xl xl:px-0">
-        <div className="space-y-1 text-center py-10 border-b border-gray-200">
-          <p className="text-base leading-6 font-medium text-gray-500 my-3">
-            {preview ? "※下書き" : format(new Date(blog.publishedAt), "yyyy/MM/dd")}
-          </p>
-          <h1 className="text-3xl leading-9 font-extrabold text-gray-900 tracking-tight sm:text-4xl sm:leading-10 md:text-5xl md:leading-14">
-            {blog.title}
-          </h1>
-          {blog.category && <div className="pt-2 text-blue-400">#{blog.category.name}</div>}
-        </div>
-        <article
-          dangerouslySetInnerHTML={{
-            __html: `${blog.body}`,
-          }}
-          className="prose max-w-none pt-10 pb-8 prose-blue"
-        />
+        {loaded && (
+          <div>
+            <div className="space-y-1 text-center py-10 border-b border-gray-200">
+              <p className="text-base leading-6 font-medium text-gray-500 my-3">
+                {preview ? "※下書き" : format(new Date(blog.publishedAt), "yyyy/MM/dd")}
+              </p>
+              <h1 className="text-3xl leading-9 font-extrabold text-gray-900 tracking-tight sm:text-4xl sm:leading-10 md:text-5xl md:leading-14">
+                {blog.title}
+              </h1>
+              {blog.category && <div className="pt-2 text-blue-400">#{blog.category.name}</div>}
+            </div>
+            <article
+              dangerouslySetInnerHTML={{
+                __html: `${blog.body}`,
+              }}
+              className="prose max-w-none pt-10 pb-8 prose-blue"
+            />
+          </div>
+        )}
       </main>
     </>
   )
