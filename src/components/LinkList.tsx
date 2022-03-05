@@ -15,7 +15,9 @@ export const LinkList: FC<Props> = (props) => {
       <ul>
         {items.map((item, i) => (
           <li key={i}>
-            <a href={item.link}>{item.title}</a>
+            <a href={item.link} target="blank">
+              {item.title}
+            </a>
           </li>
         ))}
       </ul>
