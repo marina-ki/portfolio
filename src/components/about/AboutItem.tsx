@@ -41,7 +41,7 @@ export const AboutItem: FC<Props> = (props) => {
                     r="11"
                     fill="none"
                     stroke="currentColor"
-                    stroke-width="2"
+                    strokeWidth="2"
                   ></circle>
                 </>
               ) : (
@@ -51,7 +51,7 @@ export const AboutItem: FC<Props> = (props) => {
                 <path
                   d="M 6 -6 V -45"
                   fill="none"
-                  stroke-width="2"
+                  strokeWidth="2"
                   stroke="currentColor"
                   className="text-gray-200"
                 ></path>
@@ -60,7 +60,7 @@ export const AboutItem: FC<Props> = (props) => {
                 <path
                   d="M 6 18 V 500"
                   fill="none"
-                  stroke-width="2"
+                  strokeWidth="2"
                   stroke="currentColor"
                   className="text-gray-200"
                 ></path>

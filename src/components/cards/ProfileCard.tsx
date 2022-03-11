@@ -22,7 +22,7 @@ export const ProfileCard: FC<Props> = (props) => {
       <h2 className="mt-4 text-xl font-bold">Marina</h2>
       <p className="mt-2 text-sm font-medium">Software Engineer</p>
 
-      <p className="mt-3 text-xs text-center text-gray-500">React Native Lover</p>
+      {/* <p className="mt-3 text-xs text-center text-gray-500">React Native Lover</p> */}
 
       <ul className="flex flex-row mt-4 space-x-2">
         <ProfileIcon href="https://github.com/marina-ki" name="github">

@@ -1,15 +1,16 @@
-import { Title } from "@src/components/Title"
 import React, { FC } from "react"
+import { Title } from "../Title"
 
 type Props = {
   title: string
+  isEnd?: boolean
 }
 
 export const AboutSection: FC<Props> = (props) => {
-  const { children, title } = props
+  const { children, title, isEnd } = props
 
   return (
-    <section className="pb-4 border-b-2 border-gray-200">
+    <section className={`pb-4 ${isEnd ? "" : "border-gray-200 border-b-2"}`}>
       <Title>{title}</Title>
       {children}
     </section>

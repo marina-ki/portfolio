@@ -1,5 +1,5 @@
 import { career, qualifications, trainingPrograms } from "@src/lib"
-import { AboutItem, AboutSection, HackathonList, LinkList, SkillList } from "components"
+import { AboutItem, AboutSection, HackathonList, LinkList } from "components"
 
 export const About = () => {
   return (
@@ -35,10 +35,6 @@ export const About = () => {
       </AboutSection>
       <AboutSection title="Hackathon">
         <HackathonList />
-      </AboutSection>
-
-      <AboutSection title="Skills">
-        <SkillList />
       </AboutSection>
     </>
   )

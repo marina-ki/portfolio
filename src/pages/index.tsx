@@ -1,8 +1,29 @@
-import { About, Header, Meta, ProfileCard } from "components"
+import posts from "@.contents/posts.json"
+import { getBlog } from "@src/lib"
+import { Article, PostItem } from "@src/types"
+import { BLOG_PER_PAGE } from "@src/utils"
+import {
+  About,
+  AboutSection,
+  BlogIndex,
+  ExternalLinkIcon,
+  Header,
+  Meta,
+  PostList,
+  ProfileCard,
+  SkillList,
+} from "components"
+import { GetStaticProps } from "next"
+import Link from "next/link"
 import { useEffect } from "react"
 
-export default function Home() {
+type Props = {
+  contents: any
+  totalCount: number
+}
+export default function Home(props: Props) {
   console.log("please Enter s on window")
+  const { contents, totalCount } = props
 
   const escFunction = (e: KeyboardEvent) => {
     if (e.keyCode == 83) {
@@ -29,7 +50,38 @@ export default function Home() {
         </section>
 
         <About />
+
+        <AboutSection title="Articles">
+          <PostList items={posts as PostItem[]} />
+        </AboutSection>
+        <AboutSection title="Blog">
+          <BlogIndex {...{ contents, totalCount, currentPage: 1 }} />
+        </AboutSection>
+        <AboutSection title="Skills">
+          <SkillList />
+        </AboutSection>
+        <AboutSection title="Others" isEnd>
+          <Link href="https://tech.marinya.dev">
+            <a className="inline-flex text-blue-400" target="blank">
+              <p>読んだ記事一覧</p>
+              <ExternalLinkIcon />
+            </a>
+          </Link>
+        </AboutSection>
       </main>
     </>
   )
+}
+
+export const getStaticProps: GetStaticProps<Props> = async (context) => {
+  const data: {
+    contents: Article[]
+    totalCount: number
+  } = await getBlog({ offset: 0, limit: BLOG_PER_PAGE })
+  return {
+    props: {
+      contents: data.contents,
+      totalCount: data.totalCount,
+    },
+  }
 }

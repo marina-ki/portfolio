@@ -33,7 +33,7 @@ export const PostList: React.FC<{ items: PostItem[] }> = (props) => {
   }
 
   return (
-    <>
+    <div className="pb-8">
       <ul className="grid sm:grid-cols-2 gap-6 xl:gap-8">
         {props.items.slice(0, displayItemsCount).map((item, i) => (
           <PostLink key={`post-item-${i}`} item={item} />
@@ -49,6 +49,6 @@ export const PostList: React.FC<{ items: PostItem[] }> = (props) => {
           </button>
         </div>
       )}
-    </>
+    </div>
   )
 }

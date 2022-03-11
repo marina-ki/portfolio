@@ -1,9 +1,9 @@
-import React, { FC, useState, useEffect } from "react";
+import React, { FC } from "react"
 
-type Props = {};
+type Props = {}
 
 export const BlitzIcon: FC<Props> = (props) => {
-  const {} = props;
+  const {} = props
 
   return (
     <svg
@@ -35,7 +35,7 @@ export const BlitzIcon: FC<Props> = (props) => {
           filterUnits="userSpaceOnUse"
           color-interpolation-filters="sRGB"
         >
-          <feFlood flood-opacity="0" result="BackgroundImageFix" />
+          <feFlood floodOpacity="0" result="BackgroundImageFix" />
           <feColorMatrix
             in="SourceAlpha"
             type="matrix"
@@ -47,17 +47,8 @@ export const BlitzIcon: FC<Props> = (props) => {
             type="matrix"
             values="0 0 0 0 0.270588 0 0 0 0 0 0 0 0 0 0.615686 0 0 0 0.2 0"
           />
-          <feBlend
-            mode="normal"
-            in2="BackgroundImageFix"
-            result="effect1_dropShadow"
-          />
-          <feBlend
-            mode="normal"
-            in="SourceGraphic"
-            in2="effect1_dropShadow"
-            result="shape"
-          />
+          <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow" />
+          <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape" />
         </filter>
         <linearGradient
           id="paint0_linear"
@@ -86,5 +77,5 @@ export const BlitzIcon: FC<Props> = (props) => {
         </clipPath>
       </defs>
     </svg>
-  );
-};
+  )
+}
