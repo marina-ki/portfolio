@@ -60,7 +60,7 @@ export const getStaticPaths = async () => {
 
 // データをテンプレートに受け渡す部分の処理を記述します
 export const getStaticProps: GetStaticProps = async (context) => {
-  const draftKey = context.previewData?.draftKey
+  const draftKey = (context.previewData as any)?.draftKey
   const id = context.params?.id
   const data = typeof id === "string" ? await getArticle(id, draftKey) : null
   return {
