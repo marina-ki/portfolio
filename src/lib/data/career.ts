@@ -9,8 +9,7 @@ export const career = [
     title: "株式会社Palan",
     since: "2019.12",
     until: "present",
-    body:
-      "バックエンド(3ヶ月)→モバイル(１年)→フロントエンド(半年)と一通り経験。Rails、React Native、Blitz.js、GraphQLなどを使用。",
+    body: "バックエンド(3ヶ月)→モバイル(１年)→フロントエンド(半年)と一通り経験。Rails、React Native、Blitz.js、GraphQLなどを使用。",
     isActive: true,
   },
   {
@@ -47,6 +46,19 @@ export const career = [
     since: "2022.02",
     until: "2022.03",
     body: "情報セキュリティ工学研究室",
+  },
+  {
+    title: "???",
+    since: "2022.03",
+    until: "present",
+    body: "バックエンドエンジニア",
+    isActive: true,
+  },
+  {
+    title: "株式会社Mentally",
+    since: "2022.05",
+    until: "present",
+    body: "TODO",
     isActive: true,
   },
 ]
