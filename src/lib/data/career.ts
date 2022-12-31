@@ -8,9 +8,8 @@ export const career = [
   {
     title: "株式会社Palan",
     since: "2019.12",
-    until: "present",
+    until: "2022.01",
     body: "バックエンド(3ヶ月)→モバイル(１年)→フロントエンド(半年)と一通り経験。Rails、React Native、Blitz.js、GraphQLなどを使用。",
-    isActive: true,
   },
   {
     title: "Appify Technologies, Inc.",
@@ -52,18 +51,16 @@ export const career = [
     since: "2022.03",
     until: "2022.09",
     body: "内定者インターン。バックエンドエンジニアでGoを使用。",
-    isActive: true,
   },
   {
     title: "株式会社Mentally",
     since: "2022.05",
     until: "2022.10",
     body: "メンタルケアのサービスを提供する。フルスタックエンジニアとして携わる。",
-    isActive: true,
   },
   {
     title: "ソニーグループ株式会社",
-    since: "2022.9",
+    since: "2022.09",
     body: "R&Dセンターでレーザの研究開発に携わる。",
   },
 ].reverse()
