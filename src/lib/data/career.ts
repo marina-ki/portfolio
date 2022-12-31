@@ -48,17 +48,22 @@ export const career = [
     body: "情報セキュリティ工学研究室のインターンシップでハードウェアセキュリティを学ぶ",
   },
   {
-    title: "???",
+    title: "???(secret)",
     since: "2022.03",
-    until: "present",
-    body: "バックエンドエンジニア",
+    until: "2022.09",
+    body: "内定者インターン。バックエンドエンジニアでGoを使用。",
     isActive: true,
   },
   {
     title: "株式会社Mentally",
     since: "2022.05",
-    until: "present",
-    body: "TODO",
+    until: "2022.10",
+    body: "メンタルケアのサービスを提供する。フルスタックエンジニアとして携わる。",
     isActive: true,
   },
-]
+  {
+    title: "ソニーグループ株式会社",
+    since: "2022.9",
+    body: "R&Dセンターでレーザの研究開発に携わる。",
+  },
+].reverse()
