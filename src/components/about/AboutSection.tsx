@@ -3,6 +3,7 @@ import React, { FC } from "react"
 
 type Props = {
   title: string
+  children: React.ReactNode
 }
 
 export const AboutSection: FC<Props> = (props) => {

@@ -1,6 +1,6 @@
 import { ArticleIndexCard, ExternalLinkIcon, Title } from "components"
 import Link from "next/link"
-import React, { FC } from "react"
+import { FC } from "react"
 import { Article } from "types"
 
 type Props = {
@@ -23,10 +23,10 @@ export const BlogIndex: FC<Props> = ({ contents, totalCount, currentPage }) => {
       <section className="mb-10">
         <Title>Others</Title>
         <Link href="https://tech.marinya.dev">
-          <a className="inline-flex text-blue-400">
+          <div className="inline-flex text-blue-400">
             <p>読んだ記事一覧</p>
             <ExternalLinkIcon />
-          </a>
+          </div>
         </Link>
       </section>
     </>

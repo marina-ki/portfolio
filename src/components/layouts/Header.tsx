@@ -1,6 +1,6 @@
 import { Logo } from "@src/components/icons"
 import Link from "next/link"
-import React, { FC } from "react"
+import { FC } from "react"
 
 type Props = {}
 
@@ -10,9 +10,9 @@ export const Header: FC<Props> = (props) => {
       <div className="flex items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
         <div className="items-center md:flex">
           <Link href="/">
-            <a className="block" aria-label="トップに移動">
+            <div className="block" aria-label="トップに移動">
               <Logo />
-            </a>
+            </div>
           </Link>
         </div>
 
@@ -26,12 +26,12 @@ export const Header: FC<Props> = (props) => {
             </a>
           </Link> */}
           <Link href="/articles">
-            <a
+            <div
               className="ml-4 font-medium text-gray-500 hover:text-gray-900 sm:ml-12"
               aria-label="articlesページに移動"
             >
               Articles
-            </a>
+            </div>
           </Link>
           {/* <Link href="/contact">
             <a className="ml-4 font-medium text-gray-500 hover:text-gray-900 sm:ml-12">

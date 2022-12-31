@@ -1,6 +1,6 @@
 import { format } from "date-fns"
 import Link from "next/link"
-import React, { FC } from "react"
+import { FC } from "react"
 import { Article } from "types"
 
 type Props = {
@@ -14,7 +14,7 @@ export const ArticleIndexCard: FC<Props> = (props): JSX.Element => {
 
   return (
     <Link href={`/blog/${id}`}>
-      <a
+      <div
         className="flex flex-col max-w-sm px-8 py-6 bg-white border border-gray-200 rounded-lg hover:bg-gray-50 hover:shadow-lg"
         aria-label={title}
       >
@@ -33,7 +33,7 @@ export const ArticleIndexCard: FC<Props> = (props): JSX.Element => {
             {format(new Date(publishedAt), "yyyy/MM/dd")}
           </span>
         </div>
-      </a>
+      </div>
     </Link>
   )
 }
