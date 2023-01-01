@@ -1,4 +1,5 @@
-import { ArticleIndexCard } from "components"
+import { ArticleIndexCard, ExternalLinkIcon, Title } from "components"
+import Link from "next/link"
 import { FC } from "react"
 import { Article } from "types"
 
@@ -19,7 +20,7 @@ export const BlogIndex: FC<Props> = ({ contents, totalCount, currentPage }) => {
         ))}
       </ul>
       {/* <Pagination totalCount={totalCount} perPage={BLOG_PER_PAGE} currentPage={currentPage} /> */}
-      {/* <section className="mb-10">
+      <section className="mb-10">
         <Title>Others</Title>
         <Link href="https://tech.marinya.dev">
           <div className="inline-flex text-blue-400">
@@ -27,7 +28,7 @@ export const BlogIndex: FC<Props> = ({ contents, totalCount, currentPage }) => {
             <ExternalLinkIcon />
           </div>
         </Link>
-      </section> */}
+      </section>
     </>
   )
 }
