@@ -1,6 +1,6 @@
 import { EmailIcon, GithubIcon, ProfileIcon, TwitterIcon, ZennIcon } from "components"
 import Image from "next/image"
-import React, { FC } from "react"
+import { FC } from "react"
 
 type Props = {}
 
@@ -25,7 +25,7 @@ export const ProfileCard: FC<Props> = (props) => {
       <p className="mt-3 text-xs text-center text-gray-500">React Native Lover</p>
 
       <ul className="flex flex-row mt-4 space-x-2">
-        <ProfileIcon href="https://github.com/malillu" name="github">
+        <ProfileIcon href="https://github.com/marina-ki" name="github">
           <GithubIcon />
         </ProfileIcon>
         <ProfileIcon href="https://zenn.dev/marin_a___" name="zenn">
