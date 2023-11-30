@@ -62,6 +62,11 @@ export const career = [
     title: "ソニーグループ株式会社",
     since: "2022.09",
     body: "R&Dセンターでレーザの研究開発に携わる。",
+  },
+  {
+    title: "???",
+    since: "2023.4",
+    body: "新卒",
     isActive: true,
   },
 ].reverse()
