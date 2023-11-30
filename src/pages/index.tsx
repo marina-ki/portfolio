@@ -1,7 +1,16 @@
+import { getBlog } from "@src/lib"
+import { Article } from "@src/types"
+import { BLOG_PER_PAGE } from "@src/utils"
 import { About, Header, Meta, ProfileCard } from "components"
+import { GetStaticProps } from "next"
 import { useEffect } from "react"
 
-export default function Home() {
+type Props = {
+  contents: any
+  totalCount: number
+}
+
+export default function Home(props: Props) {
   console.log("please Enter s on window")
 
   const escFunction = (e: KeyboardEvent) => {
@@ -28,8 +37,21 @@ export default function Home() {
           <ProfileCard />
         </section>
 
-        <About />
+        <About props={props} />
       </main>
     </>
   )
+}
+
+export const getStaticProps: GetStaticProps<Props> = async (context) => {
+  const data: {
+    contents: Article[]
+    totalCount: number
+  } = await getBlog({ offset: 0, limit: BLOG_PER_PAGE })
+  return {
+    props: {
+      contents: data.contents,
+      totalCount: data.totalCount,
+    },
+  }
 }

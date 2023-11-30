@@ -1,7 +1,6 @@
-import posts from "@src/builder/posts"
-import { career, getBlog, qualifications, trainingPrograms } from "@src/lib"
-import { Article, PostItem } from "@src/types"
-import { BLOG_PER_PAGE } from "@src/utils"
+import posts from "@.contents/posts.json"
+import { career, qualifications, trainingPrograms } from "@src/lib"
+import { PostItem } from "@src/types"
 import {
   AboutItem,
   AboutSection,
@@ -11,15 +10,13 @@ import {
   PostList,
   SkillList,
 } from "components"
-import { GetStaticProps } from "next"
-
 type Props = {
   contents: any
   totalCount: number
 }
-
 export const About = (props: Props) => {
   const { contents, totalCount } = props
+  console.log(contents)
 
   return (
     <>
@@ -64,22 +61,9 @@ export const About = (props: Props) => {
         <PostList items={posts as PostItem[]} />
       </AboutSection>
 
-      <AboutSection title="Blog">
+      {/* <AboutSection title="Blog">
         <BlogIndex {...{ contents, totalCount, currentPage: 1 }} />
-      </AboutSection>
+      </AboutSection> */}
     </>
   )
-}
-
-export const getStaticProps: GetStaticProps<Props> = async (context) => {
-  const data: {
-    contents: Article[]
-    totalCount: number
-  } = await getBlog({ offset: 0, limit: BLOG_PER_PAGE })
-  return {
-    props: {
-      contents: data.contents,
-      totalCount: data.totalCount,
-    },
-  }
 }

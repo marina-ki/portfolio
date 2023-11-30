@@ -12,7 +12,7 @@ export const BlogIndex: FC<Props> = ({ contents, totalCount, currentPage }) => {
   return (
     <>
       <ul className="grid gap-6 sm:grid-cols-2 xl:grid-cols-3">
-        {contents.map((article) => (
+        {contents?.map((article) => (
           <li key={article.id}>
             <ArticleIndexCard article={article} />
           </li>

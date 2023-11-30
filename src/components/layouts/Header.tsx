@@ -25,14 +25,14 @@ export const Header: FC<Props> = (props) => {
               Blog
             </a>
           </Link> */}
-          <Link href="/articles">
+          {/* <Link href="/articles">
             <div
               className="ml-4 font-medium text-gray-500 hover:text-gray-900 sm:ml-12"
               aria-label="articlesページに移動"
             >
               Articles
             </div>
-          </Link>
+          </Link> */}
           {/* <Link href="/contact">
             <a className="ml-4 font-medium text-gray-500 hover:text-gray-900 sm:ml-12">
               Contact
