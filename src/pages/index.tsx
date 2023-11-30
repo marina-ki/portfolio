@@ -12,7 +12,6 @@ type Props = {
 
 export default function Home(props: Props) {
   console.log("please Enter s on window")
-
   const escFunction = (e: KeyboardEvent) => {
     if (e.keyCode == 83) {
       const log = "🍺".repeat(10000)
@@ -37,7 +36,7 @@ export default function Home(props: Props) {
           <ProfileCard />
         </section>
 
-        <About props={props} />
+        <About {...props} />
       </main>
     </>
   )

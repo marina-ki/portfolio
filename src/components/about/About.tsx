@@ -16,7 +16,6 @@ type Props = {
 }
 export const About = (props: Props) => {
   const { contents, totalCount } = props
-  console.log(contents)
 
   return (
     <>
@@ -61,9 +60,9 @@ export const About = (props: Props) => {
         <PostList items={posts as PostItem[]} />
       </AboutSection>
 
-      {/* <AboutSection title="Blog">
+      <AboutSection title="Blog">
         <BlogIndex {...{ contents, totalCount, currentPage: 1 }} />
-      </AboutSection> */}
+      </AboutSection>
     </>
   )
 }
