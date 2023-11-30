@@ -7,7 +7,7 @@ export const About = () => {
       <AboutSection title="Education">
         <div className="pb-8 prose">
           <ul>
-            <li>東京大学工学部４年</li>
+            <li>東京大学2023年卒</li>
           </ul>
         </div>
       </AboutSection>
