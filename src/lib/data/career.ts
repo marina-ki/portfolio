@@ -64,8 +64,8 @@ export const career = [
     body: "R&Dセンターでレーザの研究開発に携わる。",
   },
   {
-    title: "???",
-    since: "2023.4",
+    title: "???(secret)",
+    since: "2023.04",
     body: "新卒",
     isActive: true,
   },
