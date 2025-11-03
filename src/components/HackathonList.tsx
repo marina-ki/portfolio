@@ -11,9 +11,7 @@ const hackathons = [
   },
 ]
 
-export const HackathonList: FC<Props> = (props) => {
-  const {} = props
-
+export const HackathonList: FC<Props> = () => {
   return (
     <div className="pb-8 prose">
       <ul>

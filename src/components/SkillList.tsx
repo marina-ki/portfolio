@@ -4,9 +4,7 @@ import { SkillIcon } from "./SkillIcon"
 
 type Props = {}
 
-export const SkillList: FC<Props> = (props) => {
-  const {} = props
-
+export const SkillList: FC<Props> = () => {
   return (
     <div className="pb-8">
       {skills.map((skill) => (

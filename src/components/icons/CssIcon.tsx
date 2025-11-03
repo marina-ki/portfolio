@@ -1,9 +1,8 @@
-import React, { FC, useState, useEffect } from "react";
+import React, { FC } from "react";
 
 type Props = {};
 
-export const CssIcon: FC<Props> = (props) => {
-  const {} = props;
+export const CssIcon: FC<Props> = () => {
 
   return (
     <svg

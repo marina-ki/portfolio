@@ -2,9 +2,7 @@ import React, { FC } from "react"
 
 type Props = {}
 
-export const ExternalLinkIcon: FC<Props> = (props) => {
-  const {} = props
-
+export const ExternalLinkIcon: FC<Props> = () => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"

@@ -12,14 +12,14 @@ type Props = {
 
 export default function Home(props: Props) {
   console.log("please Enter s on window")
-  const escFunction = (e: KeyboardEvent) => {
-    if (e.keyCode == 83) {
-      const log = "🍺".repeat(10000)
-      console.log(log)
-    }
-  }
 
   useEffect(() => {
+    const escFunction = (e: KeyboardEvent) => {
+      if (e.keyCode === 83) {
+        const log = "🍺".repeat(10000)
+        console.log(log)
+      }
+    }
     document.addEventListener("keydown", escFunction, false)
   }, [])
 

@@ -1,9 +1,8 @@
-import React, { FC, useState, useEffect } from "react";
+import React, { FC } from "react";
 
 type Props = {};
 
-export const TwitterIcon: FC<Props> = (props) => {
-  const {} = props;
+export const TwitterIcon: FC<Props> = () => {
 
   return (
     <svg viewBox="0 0 27 27" width="30" height="30">

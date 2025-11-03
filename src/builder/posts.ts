@@ -3,7 +3,8 @@ import Parser from "rss-parser"
 import { FeedItem, PostItem } from "types"
 import { member } from "../utils"
 
-export default {}
+const POSTS_BUILDER = {}
+export default POSTS_BUILDER
 
 const parser = new Parser()
 

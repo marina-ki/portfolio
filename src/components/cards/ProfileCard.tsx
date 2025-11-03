@@ -4,9 +4,7 @@ import { FC } from "react"
 
 type Props = {}
 
-export const ProfileCard: FC<Props> = (props) => {
-  const {} = props
-
+export const ProfileCard: FC<Props> = () => {
   return (
     <div className="flex flex-col items-center justify-center p-4 bg-white border border-gray-200 rounded-lg shadow-lg">
       <div className="w-40 h-40 overflow-hidden border border-gray-200 rounded-full shadow-xl">

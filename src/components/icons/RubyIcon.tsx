@@ -1,9 +1,8 @@
-import React, { FC, useState, useEffect } from "react";
+import React, { FC } from "react";
 
 type Props = {};
 
-export const RubyIcon: FC<Props> = (props) => {
-  const {} = props;
+export const RubyIcon: FC<Props> = () => {
 
   return (
     <svg
